@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+falcon = "==2.0.0"
+sqlalchemy = "==1.3.12"
+psycopg2 = "==2.8.4"
+gunicorn = "*"
+faker = "*"
+webargs = "*"
+pytest = "*"
+sqlalchemy-pagination = {git = "https://github.com/wizeline/sqlalchemy-pagination.git"}
+falcon-auth = {extras = ["backend-jwt"],version = "*"}
+sqlalchemy-utils = "*"
+
+[requires]
+python_version = "3.6"
