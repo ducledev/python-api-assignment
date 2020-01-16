@@ -7,6 +7,7 @@ Requirements
 ============
 This project uses [pipenv](https://pipenv.readthedocs.io/en/latest/) as python manager for installation and running.
  
+- OS: Ubuntu 18.04
 - Python: 3.6.x
 - [Falcon framework](https://falconframework.org/)
 - [SqlAlchemy](https://www.sqlalchemy.org/)
@@ -70,7 +71,7 @@ Payload Data
   "exp": 1610775869
 }
 ```
-After encoded (use settings.JWT_SECRET_KEY as secret key)
+After encoded (use settings.JWT_CONFIG['secret_key'] as secret key)
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpZ2EiLCJwYXNzd29yZCI6ImdpZ2EiLCJleHAiOjE2MTA3NzU4Njl9.Q4KfxBSzQ-Yxw7871elUQjVh7thgZyw_CCGX5z4sUGQ
 ```
@@ -174,3 +175,7 @@ Delete customer
 
 }
 ```
+
+Postman Collection
+------
+[Link]
