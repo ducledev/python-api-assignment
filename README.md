@@ -56,14 +56,14 @@ Usage
 
 JWT Authentication
 ------
-Algorithm & Token Type
+Algorithm & Token Type:
 ```json
 {
   "alg": "HS256",
   "typ": "JWT"
 }
 ```
-Payload Data
+Payload Data:
 ```json
 {
   "username": "giga",
@@ -71,9 +71,9 @@ Payload Data
   "exp": 1610775869
 }
 ```
-After encoded (use settings.JWT_CONFIG['secret_key'] as secret key)
+After encoded (use settings.JWT_CONFIG['secret_key'] as secret key), put in headers of request:
 ```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpZ2EiLCJwYXNzd29yZCI6ImdpZ2EiLCJleHAiOjE2MTA3NzU4Njl9.Q4KfxBSzQ-Yxw7871elUQjVh7thgZyw_CCGX5z4sUGQ
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpZ2EiLCJwYXNzd29yZCI6ImdpZ2EiLCJleHAiOjE2MTA3NzU4Njl9.Q4KfxBSzQ-Yxw7871elUQjVh7thgZyw_CCGX5z4sUGQ
 ```
 
 Sample Request/Response
@@ -89,7 +89,7 @@ Create a customer
 }
 ```
 
-- Response
+- Response (HTTP_CODE=201)
 ```json
 {
     "id": 104
@@ -99,14 +99,14 @@ Create a customer
 Get a customer
 - Request: GET http://127.0.0.1:5000/customers/104
 
-- Response
+- Response (HTTP_CODE=200)
 ```json
 {
     "customer": {
         "id": 104,
         "name": "Sample Name",
         "dob": "1987-02-04",
-        "updated_at": "2020-01-16 15:29:22.599114"
+        "updated_at": "2020-01-16 15:29:22"
     }
 }
 ```
@@ -121,14 +121,14 @@ Update a customer
 }
 ```
 
-- Response
+- Response (HTTP_CODE=200)
 ```json
 {
     "customer": {
         "id": 2,
         "name": "New Name",
         "dob": "1980-01-29",
-        "updated_at": "2020-01-16 15:34:14.157446"
+        "updated_at": "2020-01-16 15:34:14"
     }
 }
 ```
@@ -136,7 +136,7 @@ Update a customer
 Get list customer
 - Request: GET http://127.0.0.1:5000/customers?page_num=1&limit=3
 
-- Response
+- Response (HTTP_CODE=200)
 ```json
 {
     "customers": [
@@ -169,13 +169,20 @@ Get list customer
 Delete customer
 - Request: DELETE http://127.0.0.1:5000/customers/102
 
-- Response
+- Response (HTTP_CODE=200)
 ```json
-{
-
-}
+{}
 ```
 
 Postman Collection
 ------
 [Link]
+
+Deployment (AWS LightSail)
+------
+- Home Url: http://52.74.179.95/
+- Sub Url: http://52.74.179.95/customers
+- Authentication (header):
+```
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdpZ2EiLCJwYXNzd29yZCI6ImdpZ2EiLCJleHAiOjE2MTA3NzU4Njl9.Q4KfxBSzQ-Yxw7871elUQjVh7thgZyw_CCGX5z4sUGQ
+```

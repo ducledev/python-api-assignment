@@ -51,7 +51,7 @@ class CustomerItemResource:
     def on_get(self, req, resp, customer_id):
         cus = req.context.db_session.query(Customer).get(customer_id)
         if not cus:
-            raise falcon.HTTPNotFound()
+            raise falcon.HTTPNotFound(description='Customer does not exist.')
         results = {
             'customer': cus.as_dict,
         }
@@ -62,7 +62,7 @@ class CustomerItemResource:
     def on_put(self, req, resp, args, customer_id):
         cus = req.context.db_session.query(Customer).get(customer_id)
         if not cus:
-            raise falcon.HTTPNotFound()
+            raise falcon.HTTPNotFound(description='Customer does not exist.')
         cus.name = args['name']
         cus.dob = args['dob']
         req.context.db_session.commit()
@@ -75,7 +75,7 @@ class CustomerItemResource:
     def on_delete(self, req, resp, customer_id):
         cus = req.context.db_session.query(Customer).get(customer_id)
         if not cus:
-            raise falcon.HTTPNotFound()
+            raise falcon.HTTPNotFound(description='Customer does not exist.')
         req.context.db_session.delete(cus)
         req.context.db_session.commit()
         resp.status = falcon.HTTP_200
