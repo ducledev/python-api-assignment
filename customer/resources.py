@@ -39,6 +39,14 @@ pagination_args = {
 }
 
 
+class HomeResource:
+    def on_get(self, req, resp):
+        resp.status = falcon.HTTP_200
+        resp.media = {
+            'Message': 'This is me, Falcon, serving a resource!'
+        }
+
+
 class CustomerItemResource:
     def on_get(self, req, resp, customer_id):
         cus = req.context.db_session.query(Customer).get(customer_id)
