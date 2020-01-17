@@ -6,7 +6,8 @@ from falcon_auth import FalconAuthMiddleware, JWTAuthBackend
 def user_loader(payload: dict):
     username = payload.get('username')
     password = payload.get('password')
-    if username == settings.JWT_CONFIG['username'] and password == settings.JWT_CONFIG['password']:
+    if username == settings.JWT_CONFIG['username'] and \
+            password == settings.JWT_CONFIG['password']:
         return username
     else:
         return None
@@ -17,7 +18,9 @@ auth_backend = JWTAuthBackend(user_loader,
                               verify_claims=['exp'],
                               required_claims=['exp'])
 exempt_routes = ['/']
-auth_middleware = FalconAuthMiddleware(auth_backend, exempt_routes=exempt_routes, exempt_methods=['HEAD'])
+auth_middleware = FalconAuthMiddleware(auth_backend,
+                                       exempt_routes=exempt_routes,
+                                       exempt_methods=['HEAD'])
 
 app = falcon.API(
     middleware=[

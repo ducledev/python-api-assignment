@@ -16,6 +16,7 @@ pytest = "*"
 sqlalchemy-pagination = {git = "https://github.com/wizeline/sqlalchemy-pagination.git"}
 falcon-auth = {extras = ["backend-jwt"],version = "*"}
 sqlalchemy-utils = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.6"

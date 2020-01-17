@@ -17,7 +17,8 @@ use_args = parser.use_args
 
 def validate_age(dob):
     today = date.today()
-    age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+    age = today.year - dob.year - (
+            (today.month, today.day) < (dob.month, dob.day))
     if age > 18:
         return True
     raise ValidationError('Customer age must be greater than 18.')

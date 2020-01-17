@@ -19,4 +19,3 @@ JWT_CONFIG = {
     'username': 'giga',
     'password': 'giga'
 }
-
