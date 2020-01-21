@@ -18,6 +18,7 @@ sqlalchemy-pagination = {git = "https://github.com/wizeline/sqlalchemy-paginatio
 falcon-auth = {extras = ["backend-jwt"],version = "*"}
 sqlalchemy-utils = "*"
 flake8 = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.6"

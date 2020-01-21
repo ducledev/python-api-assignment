@@ -16,3 +16,4 @@
 # others
 .pytest_cache/
 .venv/
+*.env
