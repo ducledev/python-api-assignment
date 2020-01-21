@@ -6,8 +6,7 @@ from falcon_auth import FalconAuthMiddleware, JWTAuthBackend
 def user_loader(payload: dict):
     username = payload.get('username')
     password = payload.get('password')
-    if username == settings.JWT_CONFIG['username'] and \
-            password == settings.JWT_CONFIG['password']:
+    if username == settings.JWT_CONFIG['username'] and password == settings.JWT_CONFIG['password']:     # noqa
         return username
     else:
         return None
