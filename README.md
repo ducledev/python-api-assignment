@@ -176,13 +176,8 @@ Delete customer
 
 Postman Collection
 ------
-- Localhost:
-
-    [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/run-collection/0f58f8a36cdfe9d99774)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0f58f8a36cdfe9d99774#?env%5BGiga%20Env%5D=W3sia2V5IjoiQVdTX0hPU1QiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiTE9DQUxfSE9TVCIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX1d)
     
-- AWS LightSail:
-
-    [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/9b4857780d889ae80f03)
 
 Deployment (AWS LightSail)
 ------
